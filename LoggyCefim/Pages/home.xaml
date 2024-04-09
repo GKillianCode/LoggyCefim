@@ -9,6 +9,27 @@
       Title="home">
 
     <Grid>
-        
+        <Grid.Resources>
+
+            <Style x:Key="filePathLabel" TargetType="Label">
+                <Setter Property="Background" Value="#f2f2f2 "></Setter>
+                <Setter Property="MinWidth" Value="450"></Setter>
+                <Setter Property="Padding" Value="10"></Setter>
+            </Style>
+
+            <Style x:Key="SelectButton" TargetType="Button">
+                <Setter Property="Padding" Value="10"></Setter>
+            </Style>
+        </Grid.Resources>
+
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel Margin="0, 50, 0, 0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <Label Style="{StaticResource filePathLabel}">Path:</Label>
+                <Button Style="{StaticResource SelectButton}">Sélectionner</Button>
+            </StackPanel>
+
+            <Label HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}">error</Label>
+        </StackPanel>
     </Grid>
 </Page>

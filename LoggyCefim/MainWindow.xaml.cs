@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LoggyCefim.Pages;
 
 namespace LoggyCefim
 {
@@ -23,6 +24,8 @@ namespace LoggyCefim
         public MainWindow()
         {
             InitializeComponent();
+
+            _mainFrame.Navigate(new home());
         }
     }
 }

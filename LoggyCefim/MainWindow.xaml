@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:LoggyCefim"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1080">
-    <Grid>
-        
-    </Grid>
+    <Frame x:Name="_mainFrame" Background="#fefefe">
+    </Frame>
 </Window>

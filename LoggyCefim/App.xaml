@@ -4,6 +4,39 @@
              xmlns:local="clr-namespace:LoggyCefim"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ControlTemplate x:Key="AlertLabel" TargetType="{x:Type Label}">
+            <Border CornerRadius="10" 
+                    Background="{TemplateBinding Background}" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    Padding="2" MinWidth="60" 
+                    HorizontalAlignment="Center" 
+                    SnapsToDevicePixels="true">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style x:Key="alertDebug" TargetType="Label">
+            <Setter Property="Background" Value="#5eaf47"></Setter>
+            <Setter Property="Foreground" Value="#FFF"></Setter>
+        </Style>
+        <Style x:Key="alertInfo" TargetType="Label">
+            <Setter Property="Background" Value="#4cc2ff"></Setter>
+            <Setter Property="Foreground" Value="#FFF"></Setter>
+        </Style>
+        <Style x:Key="alertAlert" TargetType="Label">
+            <Setter Property="Background" Value="#c62d27"></Setter>
+            <Setter Property="Foreground" Value="#FFF"></Setter>
+        </Style>
+        <Style x:Key="alertError" TargetType="Label">
+            <Setter Property="Background" Value="#f4c354"></Setter>
+            <Setter Property="Foreground" Value="#111"></Setter>
+        </Style>
+
     </Application.Resources>
 </Application>
