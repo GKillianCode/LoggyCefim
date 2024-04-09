@@ -24,7 +24,7 @@ namespace LoggyCefim
         public MainWindow()
         {
             InitializeComponent();
-            _mainFrame.Navigate(new Pages.logs());
+            _mainFrame.Navigate(new logs());
 
             _mainFrame.Navigate(new home());
         }
