@@ -29,7 +29,7 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <ListView HorizontalContentAlignment="Center">
+        <ListView HorizontalContentAlignment="Center" Margin="0,20,0,0">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Retour" HorizontalAlignment="Left" MaxHeight="20px">
                 </Button>
@@ -45,7 +45,7 @@
                 <TextBlock Text="Rechercher par mot clé:"  VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <TextBox Width="600PX" MaxHeight="25px" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" MinWidth="670" Background="LightGray" Margin="0 , 50, 0 ,0">
+            <StackPanel Orientation="Horizontal" MinWidth="670" Background="LightGray">
                 <StackPanel Margin="20px" HorizontalAlignment="Left">
                     <TextBlock Text="2015-07-29"/>
                     <TextBlock Text="19:21:53,209"/>
@@ -54,11 +54,7 @@
                     <TextBlock Text="Send worker leaving thread" VerticalAlignment="Center"/>
                     <TextBlock Text="SendWorker:188978561024:QuorumCnxManager$SendWorker@688" VerticalAlignment="Center"/>
                 </StackPanel>
-                <Border Margin="20" VerticalAlignment="Center" HorizontalAlignment="Right" Background="yellow" CornerRadius="10" Padding="2">
-                    <StackPanel>
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="error" Foreground="Black"/>
-                    </StackPanel>
-                </Border>
+                <Label HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}">error</Label>
             </StackPanel>
             
         </ListView>
