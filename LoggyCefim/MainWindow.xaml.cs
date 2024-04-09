@@ -23,6 +23,7 @@ namespace LoggyCefim
         public MainWindow()
         {
             InitializeComponent();
+            _mainFrame.Navigate(new Pages.logs());
         }
     }
 }
