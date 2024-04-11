@@ -56,7 +56,7 @@
                                     <Label Content="{Binding DateTime}"/>
                                 </StackPanel>
                                 <StackPanel Margin="20">
-                                    <Label Content="{Binding Processus}" VerticalAlignment="Center"/>
+                                    <Label FontWeight="Bold" FontSize="12" Content="{Binding Processus}" VerticalAlignment="Center"/>
                                     <Label Content="{Binding Description}" VerticalAlignment="Center"/>
                                 </StackPanel>
                                 <Label Content="{Binding AlertType}" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{Binding AlertType, Converter={StaticResource ColorConverter}}"/>
