@@ -52,7 +52,7 @@
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
-                            <Button Padding="5">Ouvrir</Button>
+                        <Button Padding="5" Click="RedirectOnclick">Ouvrir</Button>
                         </StackPanel>
                 </Grid>
             </Border>

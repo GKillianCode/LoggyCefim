@@ -20,9 +20,17 @@ namespace LoggyCefim.Pages
     /// </summary>
     public partial class logs : Page
     {
+        private LogsModel _logsModel;
         public logs()
         {
             InitializeComponent();
+            _logsModel = new LogsModel();
+            DataContext = _logsModel;
+        }
+
+        public logs(LogsModel logsModel) : this()
+        {
+            _logsModel = logsModel; // Utilise l'objet LogsModel passé en argument
         }
     }
 }
