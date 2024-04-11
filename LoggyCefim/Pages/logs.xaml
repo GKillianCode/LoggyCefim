@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LoggyCefim.Pages"
+      xmlns:Converters="clr-namespace:LoggyCefim.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="logs">
@@ -27,6 +28,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Converters:ColorConverter x:Key="ColorConverter" />
     </Page.Resources>
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -56,7 +59,7 @@
                                     <Label Content="{Binding Processus}" VerticalAlignment="Center"/>
                                     <Label Content="{Binding Description}" VerticalAlignment="Center"/>
                                 </StackPanel>
-                                <Label Content="{Binding AlertType}" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}"/>
+                                <Label Content="{Binding AlertType}" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{Binding AlertType, Converter={StaticResource ColorConverter}}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
