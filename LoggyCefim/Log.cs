@@ -54,7 +54,7 @@ namespace LoggyCefim.Pages
 
                 _nbAlertDebug = CountOccurrences("DEBUG");
                 _nbAlertInfo = CountOccurrences("INFO");
-                _nbAlertWarning = CountOccurrences("ALERT");
+                _nbAlertWarning = CountOccurrences("WARN");
                 _nbAlertError = CountOccurrences("ERROR");
 
                 Console.WriteLine(_nbAlertInfo);
