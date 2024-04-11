@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LoggyCefim.ViewModels;
 
 namespace LoggyCefim.Pages
 {
@@ -20,17 +22,21 @@ namespace LoggyCefim.Pages
     /// </summary>
     public partial class logs : Page
     {
-        private LogsModel _logsModel;
+        private LogViewModel _logsViewModel;
+
+        public ObservableCollection<LogItemViewModel> ListLog { get; set;  }
         public logs()
         {
             InitializeComponent();
-            _logsModel = new LogsModel();
-            DataContext = _logsModel;
+            _logsViewModel = new LogViewModel();
+            DataContext = this;
         }
 
-        public logs(LogsModel logsModel) : this()
+
+        public logs(LogViewModel logsViewModel) : this()
         {
-            _logsModel = logsModel; // Utilise l'objet LogsModel passé en argument
+            _logsViewModel = logsViewModel;
+            ListLog = new ObservableCollection<LogItemViewModel>(logsViewModel.LogItems);
         }
     }
 }

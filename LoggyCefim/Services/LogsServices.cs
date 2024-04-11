@@ -71,6 +71,7 @@ namespace LoggyCefim.Services
 
                     DateTime date = DateUtils.convertStringDateToDateTime();
                     LogItemViewModel item = new LogItemViewModel(date, type, rawService, rawDescription);
+                    logItems.Add(item);
                 }
             }
 

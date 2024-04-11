@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using LoggyCefim.ViewModels;
+using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -40,14 +41,11 @@ namespace LoggyCefim.Pages
 
         private void RedirectOnclick(object sender, RoutedEventArgs e) 
         {
-            LogsModel logs  = new LogsModel(_filePath, _fileContent);
-            //Console.WriteLine("Content: " + logs.getContent());
-            //Console.WriteLine("Number of AlertInfo: " + logs.getNbAlertInfo());
+            LogViewModel logsVM  = log.getLogs();
 
             Frame parentFrame = getParentFrame(this);
 
-            parentFrame.Navigate(new logs(logs));
-            //NavigationService?.Navigate(new Uri("/Pages/logs.xaml?data=" + logs , UriKind.Relative));
+            parentFrame.Navigate(new logs(logsVM));
         }
 
         // Méthode pour récupérer le parent Frame de la page home
