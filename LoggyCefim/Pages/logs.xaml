@@ -29,10 +29,8 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <ListView HorizontalContentAlignment="Center" Margin="0,20,0,0">
+        <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <Button Content="Retour" HorizontalAlignment="Left" MaxHeight="20px">
-                </Button>
                 <StackPanel Orientation="Horizontal" Margin="100,0,0,0">
                     <TextBlock Text="Date de début:" VerticalAlignment="Center" Margin="0,0,5,0"/>
                     <DatePicker x:Name="datePickerDebut" Width="150" MaxHeight="25px"/>
@@ -45,19 +43,23 @@
                 <TextBlock Text="Rechercher par mot clé:"  VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <TextBox Width="600PX" MaxHeight="25px" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" MinWidth="670" Background="LightGray">
-                <StackPanel Margin="20px" HorizontalAlignment="Left">
-                    <TextBlock Text="2015-07-29"/>
-                    <TextBlock Text="19:21:53,209"/>
-                </StackPanel>
-                <StackPanel Margin="20px">
-                    <TextBlock Text="Send worker leaving thread" VerticalAlignment="Center"/>
-                    <TextBlock Text="SendWorker:188978561024:QuorumCnxManager$SendWorker@688" VerticalAlignment="Center"/>
-                </StackPanel>
-                <Label HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}">error</Label>
-            </StackPanel>
-            
-        </ListView>
+            <ListView ItemsSource="{Binding ListLog}" HorizontalContentAlignment="Center" Margin="0,20,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="LogItemViewModel">
+                        <StackPanel Orientation="Horizontal" Width="670" Background="LightGray">
+                            <StackPanel Margin="20px" HorizontalAlignment="Left">
+                                <Label Content="{Binding DateTime}"/>
+                            </StackPanel>
+                            <StackPanel Margin="20px">
+                                <Label Content="{Binding Processus}" VerticalAlignment="Center"/>
+                                <Label Content="{Binding Description}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <Label Content="{Binding AlertType}" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>
     

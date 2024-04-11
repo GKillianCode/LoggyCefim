@@ -14,6 +14,7 @@ namespace LoggyCefim.Pages
         int _nbAlertInfo = 0;
         int _nbAlertWarning = 0;
         int _nbAlertError = 0;
+        LogViewModel logs = new LogViewModel();
 
         public LogsModel() { }
 
@@ -37,7 +38,7 @@ namespace LoggyCefim.Pages
             {
                 reset();
 
-                LogViewModel logs = LogsServices.ParseLogFile(_path);
+                logs = LogsServices.ParseLogFile(_path);
                 _nbAlertDebug = logs.NbAlertDebug;
                 _nbAlertInfo = logs.NbAlertInfo;
                 _nbAlertWarning = logs.NbAlertWarning;
@@ -47,6 +48,8 @@ namespace LoggyCefim.Pages
 
         public string getPath() { return _path; }
         public string getContent() { return _content; }
+
+        public LogViewModel getLogs() { return logs;  }
 
         public void setPath(string path) { this._path = path; }
         public void setContent(string content)
