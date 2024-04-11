@@ -56,7 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\AlertModel.cs" />
+    <Compile Include="Services\LogsServices.cs" />
+    <Compile Include="Utils\DateUtils.cs" />
     <Compile Include="ViewModels\LogItemViewModel.cs" />
+    <Compile Include="ViewModels\LogViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

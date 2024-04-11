@@ -9,7 +9,7 @@ namespace LoggyCefim.ViewModels
         readonly string processus;
         readonly string description;
 
-        LogItemViewModel(DateTime dateTime, string alertType, string processus, string description)
+        public LogItemViewModel(DateTime dateTime, string alertType, string processus, string description)
         {
             this.dateTime = dateTime;
             this.alertType = alertType;
