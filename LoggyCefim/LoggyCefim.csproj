@@ -80,6 +80,7 @@
     <Compile Include="Pages\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Log.cs" />
     <Compile Include="Pages\logs.xaml.cs">
       <DependentUpon>logs.xaml</DependentUpon>
     </Compile>
