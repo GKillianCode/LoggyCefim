@@ -20,7 +20,7 @@ namespace LoggyCefim.Pages
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private Log log = new Log();
+        private LogsModel log = new LogsModel();
         private string _filePath;
         private string _alertDebug;
         private string _alertInfo;

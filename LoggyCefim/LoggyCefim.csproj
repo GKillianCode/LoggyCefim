@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\AlertModel.cs" />
+    <Compile Include="ViewModels\LogItemViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,7 +82,7 @@
     <Compile Include="Pages\home.xaml.cs">
       <DependentUpon>home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Log.cs" />
+    <Compile Include="Models\LogsModel.cs" />
     <Compile Include="Pages\logs.xaml.cs">
       <DependentUpon>logs.xaml</DependentUpon>
     </Compile>
