@@ -1,10 +1,13 @@
-﻿using System;
+﻿using LoggyCefim.Models;
+using System;
 using System.IO;
 
 namespace LoggyCefim.Pages
 {
-    public class Log
+    public class LogsModel
     {
+        public static readonly string LOG_DATETIME_ALERT_SEPARATOR = "- ";
+
         string _path = "Path: /";
         string _content = "";
         int _nbAlertDebug = 0;
@@ -12,9 +15,9 @@ namespace LoggyCefim.Pages
         int _nbAlertWarning = 0;
         int _nbAlertError = 0;
 
-        public Log() { }
+        public LogsModel() { }
 
-        public Log(string path, string content)
+        public LogsModel(string path, string content)
         {
             this._path = path;
             this._content = content;
@@ -52,10 +55,10 @@ namespace LoggyCefim.Pages
             {
                 reset();
 
-                _nbAlertDebug = CountOccurrences("DEBUG");
-                _nbAlertInfo = CountOccurrences("INFO");
-                _nbAlertWarning = CountOccurrences("WARN");
-                _nbAlertError = CountOccurrences("ERROR");
+                _nbAlertDebug = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_DEBUG);
+                _nbAlertInfo = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_INFO);
+                _nbAlertWarning = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_WARN);
+                _nbAlertError = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_ERROR);
 
                 Console.WriteLine(_nbAlertInfo);
             }
