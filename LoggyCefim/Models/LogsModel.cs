@@ -1,6 +1,5 @@
-﻿using LoggyCefim.Models;
-using System;
-using System.IO;
+﻿using LoggyCefim.Services;
+using LoggyCefim.ViewModels;
 
 namespace LoggyCefim.Pages
 {
@@ -10,6 +9,7 @@ namespace LoggyCefim.Pages
 
         string _path = "Path: /";
         string _content = "";
+
         int _nbAlertDebug = 0;
         int _nbAlertInfo = 0;
         int _nbAlertWarning = 0;
@@ -31,36 +31,17 @@ namespace LoggyCefim.Pages
             _nbAlertError = 0;
         }
 
-        private int CountOccurrences(string terme)
-        {
-            int count = 0;
-
-            using (StreamReader reader = new StreamReader(_path))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    if (line.Contains(terme))
-                        count++;
-                }
-            }
-
-            return count;
-        }
-
-
         private void AnalyseContent()
         {
             if (_content != "")
             {
                 reset();
 
-                _nbAlertDebug = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_DEBUG);
-                _nbAlertInfo = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_INFO);
-                _nbAlertWarning = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_WARN);
-                _nbAlertError = CountOccurrences(LogsModel.LOG_DATETIME_ALERT_SEPARATOR + AlertModel.ALERT_ERROR);
-
-                Console.WriteLine(_nbAlertInfo);
+                LogViewModel logs = LogsServices.ParseLogFile(_path);
+                _nbAlertDebug = logs.NbAlertDebug;
+                _nbAlertInfo = logs.NbAlertInfo;
+                _nbAlertWarning = logs.NbAlertWarning;
+                _nbAlertError = logs.NbAlertError;
             }
         }
 
