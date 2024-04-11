@@ -43,22 +43,28 @@
                 <TextBlock Text="Rechercher par mot clé:"  VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <TextBox Width="600PX" MaxHeight="25px" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
-            <ListView ItemsSource="{Binding ListLog}" HorizontalContentAlignment="Center" Margin="0,20,0,0">
-                <ListView.ItemTemplate>
-                    <DataTemplate DataType="LogItemViewModel">
-                        <StackPanel Orientation="Horizontal" Width="670" Background="LightGray">
-                            <StackPanel Margin="20px" HorizontalAlignment="Left">
-                                <Label Content="{Binding DateTime}"/>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ListView ItemsSource="{Binding ListLog}" HorizontalContentAlignment="Stretch" Margin="0,20,0,0" Height="570">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="LogItemViewModel">
+                            <StackPanel Orientation="Horizontal" Width="670" Background="LightGray">
+                                <StackPanel Margin="20" HorizontalAlignment="Left">
+                                    <Label Content="{Binding DateTime}"/>
+                                </StackPanel>
+                                <StackPanel Margin="20">
+                                    <Label Content="{Binding Processus}" VerticalAlignment="Center"/>
+                                    <Label Content="{Binding Description}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <Label Content="{Binding AlertType}" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}"/>
                             </StackPanel>
-                            <StackPanel Margin="20px">
-                                <Label Content="{Binding Processus}" VerticalAlignment="Center"/>
-                                <Label Content="{Binding Description}" VerticalAlignment="Center"/>
-                            </StackPanel>
-                            <Label Content="{Binding AlertType}" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Template="{StaticResource AlertLabel}" Style="{StaticResource alertDebug}"></Label>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+
+
+
         </StackPanel>
     </Grid>
 </Page>
