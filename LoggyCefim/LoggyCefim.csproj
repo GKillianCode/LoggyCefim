@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\ColorConverter.cs" />
     <Compile Include="Models\AlertModel.cs" />
     <Compile Include="Services\LogsServices.cs" />
     <Compile Include="Utils\DateUtils.cs" />
@@ -115,7 +116,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="fonts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
